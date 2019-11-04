@@ -1,7 +1,7 @@
 // Your code goes here
 
-// const overMouse = document.querySelector('.home .intro img');
-const clicker = document.querySelector ('body');
+
+
 // const wheelie = document.querySelector ();
 // const dragIt = document.querySelector ();
 // const pageLoad = document.querySelector ();
@@ -9,10 +9,10 @@ const clicker = document.querySelector ('body');
 // const resizing = document.querySelector ();
 // const scrolling = document.querySelector ();
 // const selector = document.querySelector ();
-const nav = document.querySelector ('.nav');
 
 
-/// ###### (1) ##### ///
+
+// ### MouseOver Images ### //
 const overMouse = document.querySelectorAll('img');
 overMouse.forEach(event => {
 event.addEventListener('mouseover', () => {
@@ -21,14 +21,45 @@ event.addEventListener('mouseover', () => {
 })
 }) 
 
+overMouse.forEach(event => {
+event.addEventListener('mouseleave', () => {
+    event.style.transform = 'scale(1)';
+    event.style.transition ='all 3.0s';
+})
+}) 
+
+// ### Click Body ### //
+const clicker = document.querySelector ('body');
 clicker.addEventListener('click', (event) => {
 	event.target.style.backgroundColor = 'skyblue';
 });
 
-
+// ### Dbl Click Nav ### //
+const nav = document.querySelector ('.nav');
 nav.addEventListener('dblclick', (event) => {
     event.target.style.backgroundColor = 'red';
 });
+
+// ### drag  ### //
+
+// const changeText = document.querySelectorAll('.destination')
+//   changeText.addEventListener('click', () => {
+//     changeText.textContent.alert = 'Ouch!';
+      
+// });
+
+
+
+// ### wheelie ### //
+
+
+
+// ### Resize ### // 
+const resizing = document.querySelector ();
+resizing.addEventListener('resize', () => {
+	alert('You have changed the size of the screen!');
+});
+
 
 // const bigImg = document.querySelectorAll('img');
 // bigImg.forEach(image =>{
