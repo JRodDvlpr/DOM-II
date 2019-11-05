@@ -2,11 +2,9 @@
 
 
 
-// const wheelie = document.querySelector ();
+
 // const dragIt = document.querySelector ();
-// const pageLoad = document.querySelector ();
 // const focused = document.querySelector ();
-// const resizing = document.querySelector ();
 // const scrolling = document.querySelector ();
 // const selector = document.querySelector ();
 
@@ -19,7 +17,7 @@ event.addEventListener('mouseover', () => {
     event.style.transform = 'scale(1.3)';
     event.style.transition ='all 0.3s';
 })
-}) 
+})    
 
 overMouse.forEach(event => {
 event.addEventListener('mouseleave', () => {
@@ -29,7 +27,7 @@ event.addEventListener('mouseleave', () => {
 }) 
 
 // ### Click Body ### //
-const clicker = document.querySelector ('body');
+const clicker = document.querySelector ('.content-destination');
 clicker.addEventListener('click', (event) => {
 	event.target.style.backgroundColor = 'skyblue';
 });
@@ -48,29 +46,30 @@ nav.addEventListener('dblclick', (event) => {
       
 // });
 
-
-
-// ### wheelie ### //
-
-
-
-// ### Resize ### // 
-const resizing = document.querySelector ();
-resizing.addEventListener('resize', () => {
-	alert('You have changed the size of the screen!');
+// ### LOAD ### // 
+window.addEventListener('load', () => {
+	alert('Welcome to this test dummy of a page I created to be the dummy of the page.')
 });
 
 
-// const bigImg = document.querySelectorAll('img');
-// bigImg.forEach(image =>{
-// image.addEventListener('mouseover', () => {
-//   image.style.transform='scale(1.2)';
-//   image.style.transition='all 0.3s';
-// })
-// })
-// bigImg.forEach(image =>{
-//  image.addEventListener('mouseleave', () =>{
-//  image.style.transform='scale(1)';
-//    image.style.transition='all 0.3s';
-//  })
-// })
+// ### wheelie ### //
+const wheelie = document.querySelector ('.home');
+wheelie.addEventListener('wheel', (event) => {
+	const colors = ['purple', 'white'];
+	const random = Math.floor(Math.random() * 2);
+	event.target.style.backgroundColor = colors[random];
+});
+
+
+// ### Resize ### // 
+window.addEventListener('resize', () => {
+	alert('That Hurt! You have changed the size of the screen!');
+});
+
+
+// ### KEYDOWN ### // 
+const downKey = document.querySelector ('.content-destination h2');
+downKey.addEventListener('keydown', (event) => {
+	event.target.style.color = 'red';
+});
+ 
