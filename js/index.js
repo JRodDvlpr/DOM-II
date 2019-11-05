@@ -1,11 +1,6 @@
 // Your code goes here
 
 
-
-
-// const dragIt = document.querySelector ();
-// const focused = document.querySelector ();
-// const scrolling = document.querySelector ();
 // const selector = document.querySelector ();
 
 
@@ -33,30 +28,56 @@ clicker.addEventListener('click', (event) => {
 });
 
 // ### Dbl Click Nav ### //
-const nav = document.querySelector ('.nav');
+const nav = document.querySelector ('nav');
 nav.addEventListener('dblclick', (event) => {
-    event.target.style.backgroundColor = 'red';
+    event.target.style.backgroundColor = 'white';
 });
 
 // ### drag  ### //
 
-// const changeText = document.querySelectorAll('.destination')
-//   changeText.addEventListener('click', () => {
-//     changeText.textContent.alert = 'Ouch!';
-      
+const dragIt = document.querySelectorAll('img');
+dragIt.forEach(event => {
+    event.addEventListener('drag', (event) => {
+        event.target.style.opacity = '0.4';
+    });
+})
+
+// ### Scroll ### //
+// const scrolling = document.querySelector ('');
+// scrolling.addEventListener('scroll', () => {
+//     alert('Scroll Slowly!')
 // });
+
+const elements = document.querySelectorAll('body');
+elements = Array.prototype.slice.call(elements);
+
+// and then make each element do something on scroll
+elements.forEach(function(element) {
+  window.addEventListener("scroll", runOnScroll);
+});
+
+// ### Select ### //
+
+// ### FOCUS ### //
+const focused = document.querySelectorAll('nav a');
+focused.forEach(event => {
+    event.addEventListener('focus', (event) => {
+        event.target.style.background = 'red';
+    });
+})
+
 
 // ### LOAD ### // 
 window.addEventListener('load', () => {
-	alert('Welcome to this test dummy of a page I created to be the dummy of the page.')
+	alert('Welcome to this test dummy of a page I created to be the dummy of the page. Test the page out by clicking and scrolling through it to see all the cool ')
 });
 
 
 // ### wheelie ### //
-const wheelie = document.querySelector ('.home');
+const wheelie = document.querySelector('p');
 wheelie.addEventListener('wheel', (event) => {
-	const colors = ['purple', 'white'];
-	const random = Math.floor(Math.random() * 2);
+	const colors = ['purple', 'white', 'red', 'blue'];
+	const random = Math.floor(Math.random() * 4);
 	event.target.style.backgroundColor = colors[random];
 });
 
@@ -68,8 +89,12 @@ window.addEventListener('resize', () => {
 
 
 // ### KEYDOWN ### // 
-const downKey = document.querySelector ('.content-destination h2');
+const downKey = document.querySelector ('body');
 downKey.addEventListener('keydown', (event) => {
 	event.target.style.color = 'red';
 });
- 
+
+downKey.addEventListener('keyup', (event) => {
+    event.target.style.color = 'black';
+   
+});
