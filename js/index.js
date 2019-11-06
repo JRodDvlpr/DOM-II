@@ -42,21 +42,23 @@ dragIt.forEach(event => {
     });
 })
 
-// ### Scroll ### //
-// const scrolling = document.querySelector ('');
-// scrolling.addEventListener('scroll', () => {
-//     alert('Scroll Slowly!')
-// });
-
-const elements = document.querySelectorAll('body');
-elements = Array.prototype.slice.call(elements);
-
-// and then make each element do something on scroll
-elements.forEach(function(element) {
-  window.addEventListener("scroll", runOnScroll);
+// ### auxclick ### //
+const scrolling = document.querySelector ('body');
+scrolling.addEventListener('auxclick', () => {
+    alert('wrong button')
 });
 
+
 // ### Select ### //
+// const input = document.querySelector('input');
+// input.addEventListener('select', logSelection);
+
+// function logSelection(event) {
+//   const log = document.getElementById('log');
+//   const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//   log.textContent = `You selected: ${selection}`;
+// }
+
 
 // ### FOCUS ### //
 const focused = document.querySelectorAll('nav a');
